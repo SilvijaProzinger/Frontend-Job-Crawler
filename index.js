@@ -19,27 +19,30 @@ const fetchData = async () => {
   const bodyOne = resultOne.data
   const bodyTwo = resultTwo.data
 
-  //get content from each page with cheerio
-  const $Posao = cheerio.load(bodyOne);
-  const $MojPosao = cheerio.load(bodyTwo);
+  const body = bodyOne + bodyTwo
 
-  return [$Posao, $MojPosao]
-  console.log($Posao, $MojPosao)
+  return cheerio.load(body)
 }
 
 const getResults = async() => {
-	const $ = await fetchData()
+  $ = await fetchData()
 
 	siteTitle = `Job results for ${SEARCH_WORD}`
 
-	//show jobs from Posao
-  	$('.container a').each((index, element) => {
-  		title.add($(element).text())
-  	})
-
-  	$('.job .general-info').each((index, element) => {
-  		titleTwo.add($(element).text())
-  	})
+  //get data from website Posao
+  $('.container a').each((index, element) => {
+    title.add($(element).text())
+  })
+  
+  //get data from website MojPosao
+	$('.job .general-info').each((index, element) => {
+		titleTwo.add($(element).text())
+	})
+  
+  //get data from website MojPosao in featured selection
+  $('#featured-jobs .column').each((index, element) => {
+    titleTwo.add($(element).text())
+  })
 
   /*//show jobs from Moj-Posao
   $MojPosao('.job').find('.general-info').each(function ()
