@@ -4,10 +4,11 @@ block content
  h1 #{siteTitle}
  h3 Jobs found on Posao.hr
  ul
-    each val in title
-        li= val
+  each val in title
+   each job, links in val
+    li= job
+     a(href="title.links") title.job
  h3 Jobs found on MojPosao.net
  ul
-    each val in titleTwo
-        li= val
-
+  each val in titleTwo
+   li= val

@@ -12,6 +12,7 @@ reqTwo = () => axios.get(pageTwo)
 let siteTitle = "";
 
 const title = new Set()
+//const links = new Set()
 const titleTwo = new Set()
 
 const fetchData = async () => {
@@ -31,7 +32,22 @@ const getResults = async() => {
 
   //get data from website Posao
   $('.container a').each((index, element) => {
-    title.add($(element).text())
+    //let link = $(element).attr('href')
+    //links.add(link)
+    //console.log(links)
+    //title.add($(element).text())
+
+    /* title.add($("<a />", {
+      href: $(element).attr('href'),
+      text: $(element).text()
+    }));*/
+    let job = $(element).text()
+    console.log(job)
+    let links = $(element).attr('href')
+    console.log(links)
+    title.add
+      ({job: job,
+      links: links})
   })
   
   //get data from website MojPosao
