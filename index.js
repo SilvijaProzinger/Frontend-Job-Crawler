@@ -45,9 +45,7 @@ const getResults = async() => {
     console.log(job)
     let links = $(element).attr('href')
     console.log(links)
-    title.add
-      ({job: job,
-      links: links})
+    title.add({job,links})
   })
   
   //get data from website MojPosao
