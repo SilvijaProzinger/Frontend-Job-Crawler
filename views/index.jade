@@ -6,8 +6,15 @@ block content
  ul
   for val in title
    li
-    a(href= val.links)= val.job
+    a(href= val.posao_links)= val.posao_job
  h3 Jobs found on MojPosao.net
  ul
-  each val in titleTwo
-   li= val
+  for val in titleTwo
+   li
+    a(href= val.mojposao_links)= val.mojposao_job
+ h4 Featured jobs on MojPosao.net
+ ul
+  for val in titleTwo
+   li
+    a(href= val.featured_links)= val.featured_job
+

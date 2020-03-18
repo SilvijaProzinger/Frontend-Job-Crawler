@@ -12,7 +12,6 @@ reqTwo = () => axios.get(pageTwo)
 let siteTitle = "";
 
 const title = new Set()
-//const links = new Set()
 const titleTwo = new Set()
 
 const fetchData = async () => {
@@ -32,30 +31,23 @@ const getResults = async() => {
 
   //get data from website Posao
   $('.container a').each((index, element) => {
-    //let link = $(element).attr('href')
-    //links.add(link)
-    //console.log(links)
-    //title.add($(element).text())
-
-    /* title.add($("<a />", {
-      href: $(element).attr('href'),
-      text: $(element).text()
-    }));*/
-    let job = $(element).text()
-    console.log(job)
-    let links = $(element).attr('href')
-    console.log(links)
-    title.add({job,links})
+    let posao_job = $(element).text()
+    let posao_links = $(element).attr('href')
+    title.add({posao_job, posao_links})
   })
   
   //get data from website MojPosao
-	$('.job .general-info').each((index, element) => {
-		titleTwo.add($(element).text())
+	$('.job-data p').each((index, element) => {
+    let mojposao_job = $(element).text()
+    let mojposao_links = $(element).find('.job-title a').attr('href')
+		titleTwo.add({mojposao_job, mojposao_links})
 	})
   
   //get data from website MojPosao in featured selection
-  $('#featured-jobs .column').each((index, element) => {
-    titleTwo.add($(element).text())
+  $('#featured-jobs .job-data').each((index, element) => {
+    let featured_job = $(element).text()
+    let featured_links = $(element).find('a').attr('href')
+    titleTwo.add({featured_job, featured_links})
   })
 
   /*//show jobs from Moj-Posao
