@@ -4,7 +4,7 @@ const cheerio = require('cheerio');
 const SEARCH_WORD = 'frontend';
 
 const pageOne = `http://www.posao.hr/poslovi/izraz/${SEARCH_WORD}`;
-const pageTwo = `http://www.moj-posao.net/Pretraga-Poslova/?searchWord=frontend&keyword=${SEARCH_WORD}`;
+const pageTwo = `http://www.moj-posao.net/Pretraga-Poslova/?searchWord=${SEARCH_WORD}&keyword=${SEARCH_WORD}`;
 
 reqOne = () => axios.get(pageOne)
 reqTwo = () => axios.get(pageTwo)
@@ -13,6 +13,18 @@ let siteTitle = "";
 
 const title = new Set()
 const titleTwo = new Set()
+
+const searchJob = (SEARCH_WORD) => {
+  /*if (SEARCH_WORD !== ''){
+    SEARCH_WORD = 'frontend'
+  } else {
+    return 'Enter a job title'
+  }
+  return SEARCH_WORD
+  */
+  alert('ok!')
+  //fetchData()
+}
 
 const fetchData = async () => {
   const [resultOne, resultTwo] = await axios.all([reqOne(), reqTwo()])
@@ -27,7 +39,7 @@ const fetchData = async () => {
 const getResults = async() => {
   $ = await fetchData()
 
-	siteTitle = `Job results for ${SEARCH_WORD}`
+	siteTitle = `Job results`
 
   //get data from website Posao
   $('.container a[href*="oglasi/"]').each((index, element) => {
@@ -49,7 +61,7 @@ const getResults = async() => {
     let featured_links = $(element).find('a').attr('href')
     titleTwo.add({featured_job, featured_links})
   })
-  
+
   console.log(title, titleTwo)
 
   return {

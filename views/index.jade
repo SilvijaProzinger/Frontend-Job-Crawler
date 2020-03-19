@@ -2,6 +2,9 @@ extends layout
 
 block content
  h1 #{siteTitle}
+ div
+  input#search(type='text', placeholder='Search for a job' name='keyword')
+  button#searchButton(onclick= 'searchJob()') Search
  h3 Jobs found on Posao.hr
  ul
   for val in title
