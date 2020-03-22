@@ -1,22 +1,23 @@
 extends layout
 
 block content
- h1 #{siteTitle}
- div
-  input#search(type='text', placeholder='Search for a job' name='keyword')
-  button#searchButton(onclick= 'searchJob()') Search
- h3 Jobs found on Posao.hr
- ul
+ div.headerContent
+  h1.title #{siteTitle}
+  div.searchInput
+   input#search(type='text', placeholder='Search for a job' name='keyword')
+   button#searchButton(onclick='searchJob()') Search
+ h3.websiteTitle Jobs found on Posao.hr
+ ul.posaoList
   for val in title
    li
     a(href= val.posao_links)= val.posao_job
- h3 Jobs found on MojPosao.net
- ul
+ h3.websiteTitle Jobs found on MojPosao.net
+ ul.mojPosaoList
   for val in titleTwo
    li
     a(href= val.mojposao_links)= val.mojposao_job
- h4 Featured jobs on MojPosao.net
- ul
+ h4.websiteTitle Featured jobs on MojPosao.net
+ ul.featuredList
   for val in titleTwo
    li
     a(href= val.featured_links)= val.featured_job

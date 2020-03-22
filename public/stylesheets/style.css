@@ -1,8 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
 }
 
 a {
   color: #00B7FF;
 }
+
+.headerContent {
+	text-align: center;
+	padding: 3%;
+	background-image: url('./sergey-zolkin-_UeY8aTI6d0-unsplash.jpg');
+	background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    max-width: 100%;
+    color: white;
+}
+
+#searchButton {
+	background-color: #485b8a;
+	border: none;
+	color: white;
+	padding: 5px;
+}
+
+.search {
+	padding: 5px;
+	margin: 10px;
+}
+
+.websiteTitle {
+	margin: 20px;
+}
+

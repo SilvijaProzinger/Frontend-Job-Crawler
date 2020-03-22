@@ -14,7 +14,7 @@ let siteTitle = "";
 const title = new Set()
 const titleTwo = new Set()
 
-const searchJob = (SEARCH_WORD) => {
+const searchJob = () =>{
   /*if (SEARCH_WORD !== ''){
     SEARCH_WORD = 'frontend'
   } else {
@@ -22,8 +22,9 @@ const searchJob = (SEARCH_WORD) => {
   }
   return SEARCH_WORD
   */
-  alert('ok!')
-  //fetchData()
+  //$.post('/search')
+  //return fetchData()
+  console.log('ok')
 }
 
 const fetchData = async () => {
