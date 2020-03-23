@@ -4,12 +4,18 @@ const router = express.Router();
 const getResults = require("../index");
 //const searchJob = require("../index")
 
-/* GET home page. */
+// home page. 
 router.get('/', async function(req, res, next) {
-  //const search = searchJob()
   const result = await getResults()
+  //const searchTerm = req.query.keyword
+ // console.log(searchTerm)
   res.render('index', result);
-  //res.end('done')
 });
 
+/* search page
+router.get('/search', function(req, res) {
+  res.render('search');
+  //res.end('done')
+});
+*/
 module.exports = router;

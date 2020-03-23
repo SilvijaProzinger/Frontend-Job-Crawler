@@ -4,8 +4,9 @@ block content
  div.headerContent
   h1.title #{siteTitle}
   div.searchInput
-   input#search(type='text', placeholder='Search for a job' name='keyword')
-   button#searchButton(onclick='searchJob()') Search
+   form(method='GET' action='/')
+    input#search(type='text', placeholder='Search for a job' name='keyword' value='frontend')
+    button#searchButton(onclick='getResults()') Search
  h3.websiteTitle Jobs found on Posao.hr
  ul.posaoList
   for val in title

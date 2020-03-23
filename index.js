@@ -23,8 +23,8 @@ const searchJob = () =>{
   return SEARCH_WORD
   */
   //$.post('/search')
-  //return fetchData()
-  console.log('ok')
+  return 'ok'
+  //fetchData()
 }
 
 const fetchData = async () => {
@@ -40,7 +40,7 @@ const fetchData = async () => {
 const getResults = async() => {
   $ = await fetchData()
 
-	siteTitle = `Job results`
+	siteTitle = `Job results for ${SEARCH_WORD}`
 
   //get data from website Posao
   $('.container a[href*="oglasi/"]').each((index, element) => {
@@ -63,7 +63,7 @@ const getResults = async() => {
     titleTwo.add({featured_job, featured_links})
   })
 
-  console.log(title, titleTwo)
+  //console.log(title, titleTwo)
 
   return {
   	title: [...title],

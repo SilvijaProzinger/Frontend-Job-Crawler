@@ -24,15 +24,24 @@ a {
 	background-color: #485b8a;
 	border: none;
 	color: white;
-	padding: 5px;
+	padding: 7px;
 }
 
-.search {
-	padding: 5px;
-	margin: 10px;
+#searchButton:hover {
+	background-color: #34bac8;
+	cursor: pointer;
+}
+
+#search {
+	padding: 7px;
+	margin-right: 10px;
 }
 
 .websiteTitle {
 	margin: 20px;
+}
+
+ul {
+	list-style-type: none;
 }
 
