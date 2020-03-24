@@ -12,7 +12,7 @@ a {
 .headerContent {
 	text-align: center;
 	padding: 3%;
-	background-image: url('./sergey-zolkin-_UeY8aTI6d0-unsplash.jpg');
+	background-image: url('sergey-zolkin-_UeY8aTI6d0-unsplash.jpg');
 	background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -45,3 +45,24 @@ ul {
 	list-style-type: none;
 }
 
+.subTitle {
+	color: black;
+	text-align: center;
+}
+
+.posaoLogo, .mojPosaoLogo {
+	height: 70px;
+	width: auto;
+}
+
+.websites {
+	display: flex;
+	flex-direction: row;
+	margin: auto;
+	width: 50%;
+	justify-content: center;
+}
+
+.website {
+	padding: 20px;
+}

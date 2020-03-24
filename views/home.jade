@@ -1,0 +1,17 @@
+extends layout
+
+block content
+ div.headerContent
+  h1.title Search for a job
+  div.searchInput
+   form(method='GET' action='/search')
+    input#search(type='text', placeholder='Search for a job' name='keyword')
+    button#searchButton Search
+ h2.subTitle Get job results from:
+ div.websites
+  div.website
+   img.posaoLogo(src='https://www.moj-posao.net/data/content/visual/MP/MojPosao.jpg' alt='posao.hr logo')
+   h3.subTitle Posao.hr
+  div.website
+   img.mojPosaoLogo(src='https://www.oglasnik.hr//assets/img/posao.hr-logo.png' alt='MojPosao.net logo')
+   h3.subTitle MojPosao.net
