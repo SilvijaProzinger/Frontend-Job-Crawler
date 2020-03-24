@@ -1,33 +1,21 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
 
-const SEARCH_WORD = 'frontend';
+let searchWord = '';
 
-const pageOne = `http://www.posao.hr/poslovi/izraz/${SEARCH_WORD}`;
-const pageTwo = `http://www.moj-posao.net/Pretraga-Poslova/?searchWord=${SEARCH_WORD}&keyword=${SEARCH_WORD}`;
-
-reqOne = () => axios.get(pageOne)
-reqTwo = () => axios.get(pageTwo)
-
-let siteTitle = "";
+let siteTitle = '';
 
 const title = new Set()
 const titleTwo = new Set()
 
-const searchJob = () =>{
-  /*if (SEARCH_WORD !== ''){
-    SEARCH_WORD = 'frontend'
-  } else {
-    return 'Enter a job title'
-  }
-  return SEARCH_WORD
-  */
-  //$.post('/search')
-  return 'ok'
-  //fetchData()
-}
+const fetchData = async (searchWord) => {
 
-const fetchData = async () => {
+  const pageOne = `http://www.posao.hr/poslovi/izraz/${searchWord}`;
+  const pageTwo = `http://www.moj-posao.net/Pretraga-Poslova/?searchWord=${searchWord}&keyword=${searchWord}`;
+
+  reqOne = () => axios.get(pageOne)
+  reqTwo = () => axios.get(pageTwo)
+
   const [resultOne, resultTwo] = await axios.all([reqOne(), reqTwo()])
   const bodyOne = resultOne.data
   const bodyTwo = resultTwo.data
@@ -37,10 +25,11 @@ const fetchData = async () => {
   return cheerio.load(body)
 }
 
-const getResults = async() => {
-  $ = await fetchData()
+const getResults = async (searchWord) => {
 
-	siteTitle = `Job results for ${SEARCH_WORD}`
+  $ = await fetchData(searchWord)
+
+	siteTitle = `Job results for ${searchWord}`
 
   //get data from website Posao
   $('.container a[href*="oglasi/"]').each((index, element) => {
@@ -66,9 +55,10 @@ const getResults = async() => {
   //console.log(title, titleTwo)
 
   return {
+    searchWord,
+    siteTitle,
   	title: [...title],
-  	titleTwo: [...titleTwo],
-  	siteTitle
+  	titleTwo: [...titleTwo]
   }
 }
 

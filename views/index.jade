@@ -2,11 +2,11 @@ extends layout
 
 block content
  div.headerContent
-  h1.title #{siteTitle}
+  h1.title #{siteTitle} 
   div.searchInput
-   form(method='GET' action='/')
-    input#search(type='text', placeholder='Search for a job' name='keyword' value='frontend')
-    button#searchButton(onclick='getResults()') Search
+   form(method='GET' action='/search')
+    input#search(type='text', placeholder='Search for a job' name='keyword')
+    button#searchButton Search
  h3.websiteTitle Jobs found on Posao.hr
  ul.posaoList
   for val in title
