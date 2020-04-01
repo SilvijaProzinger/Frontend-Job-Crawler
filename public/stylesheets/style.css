@@ -66,3 +66,17 @@ ul {
 .website {
 	padding: 20px;
 }
+
+.listItems {
+	margin: 10px 0 10px 0;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+a:hover {
+	text-decoration-style: line;
+	color: #00B7FF;
+}

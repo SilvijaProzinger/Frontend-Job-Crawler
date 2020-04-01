@@ -10,16 +10,16 @@ block content
  h3.websiteTitle Jobs found on Posao.hr
  ul.posaoList
   for val in title
-   li
+   li.listItems
     a(href= val.posao_links)= val.posao_job
  h3.websiteTitle Jobs found on MojPosao.net
  ul.mojPosaoList
   for val in titleTwo
-   li
+   li.listItems
     a(href= val.mojposao_links)= val.mojposao_job
  h4.websiteTitle Featured jobs on MojPosao.net
  ul.featuredList
   for val in titleTwo
-   li
+   li.listItems
     a(href= val.featured_links)= val.featured_job
 
