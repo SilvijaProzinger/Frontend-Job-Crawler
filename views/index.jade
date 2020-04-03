@@ -16,10 +16,12 @@ block content
  ul.mojPosaoList
   for val in titleTwo
    li.listItems
-    a(href= val.mojposao_links)= val.mojposao_job
- h4.websiteTitle Featured jobs on MojPosao.net
- ul.featuredList
-  for val in titleTwo
-   li.listItems
-    a(href= val.featured_links)= val.featured_job
+    h4= val.title
+    h4= val.company
+    h4= val.location
+    h4= val.deadline
+    a.link(href= val.link)= 'Apply'
+
+
+
 

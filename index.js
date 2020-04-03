@@ -6,7 +6,7 @@ let searchWord = '';
 let siteTitle = '';
 
 const title = new Set()
-const titleTwo = new Set()
+let titleTwo = []
 
 const fetchData = async (searchWord) => {
 
@@ -39,20 +39,15 @@ const getResults = async (searchWord) => {
   })
   
   //get data from website MojPosao
-	$('.job-data p').each((index, element) => {
-    let mojposao_job = $(element).text()
-    let mojposao_links = $(element).find('.job-title a').attr('href')
-    titleTwo.add({mojposao_job, mojposao_links})
+	$('.job .general-info').each(function () {
+    titleTwo.push({
+      title: $(this).find('.job-title').text(),
+      location: $(this).find('job-location').text(),
+      deadline: $(this).find('.deadline').text(),
+      company: $(this).find('.job-company').text(),
+      link: $(this).find('.job-title a').attr('href')
+    })
 	})
-  
-  //get data from website MojPosao in featured selection
-  $('#featured-jobs .job-data').each((index, element) => {
-    let featured_job = $(element).text()
-    let featured_links = $(element).find('a').attr('href')
-    titleTwo.add({featured_job, featured_links})
-  })
-
-  //console.log(title, titleTwo)
 
   return {
     searchWord,
