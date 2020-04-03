@@ -3,8 +3,13 @@ html
   head
     title= 'Job crawler'
     link(rel='stylesheet', href='/stylesheets/style.css')
+    meta(name="viewport",content="width=device-width, initial-scale=1.0")
   body
-   block content
+   div.pageContainer
+    div.contentWrap
+     block content
+     div.footer
+      h4.footerText Copyright by Silvija Prozinger 2020
 
 
 
