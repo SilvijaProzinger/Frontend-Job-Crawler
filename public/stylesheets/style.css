@@ -12,12 +12,11 @@ a {
 .headerContent {
 	text-align: center;
 	padding: 3%;
-	background-image: url('sergey-zolkin-_UeY8aTI6d0-unsplash.jpg');
+	background-image: url('black-and-gray-photo-of-person-in-front-of-computer-monitor-140945.jpg');
 	background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     max-width: 100%;
-    color: white;
 }
 
 #searchButton {
@@ -124,7 +123,7 @@ a {
 	position: absolute;
     bottom: 0;
     width: 100%;
-    background-image: url('sergey-zolkin-_UeY8aTI6d0-unsplash.jpg');
+    background-image: url('black-and-gray-photo-of-person-in-front-of-computer-monitor-140945.jpg');
 	background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
