@@ -39,6 +39,8 @@ a {
 
 .websiteTitle {
 	margin: 20px;
+	text-align: center;
+	padding: 20px;
 }
 
 ul {
@@ -68,7 +70,7 @@ ul {
 }
 
 .listItems {
-	margin: 10px 0 10px 0;
+	margin: 10px;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     width: 40%;
@@ -93,4 +95,18 @@ a {
 
 .link:hover {
 	background-color: #ff7d45;
+}
+
+.posaoList {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.mojPosaoList {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
 }

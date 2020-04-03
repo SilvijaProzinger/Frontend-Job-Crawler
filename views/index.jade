@@ -11,7 +11,11 @@ block content
  ul.posaoList
   for val in title
    li.listItems
-    a(href= val.posao_links)= val.posao_job
+    h4= val.title
+    h4= val.company
+    h4= val.location
+    h4= val.deadline
+    a.link(href= val.link)= 'Apply'
  h3.websiteTitle Jobs found on MojPosao.net
  ul.mojPosaoList
   for val in titleTwo

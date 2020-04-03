@@ -5,7 +5,7 @@ let searchWord = '';
 
 let siteTitle = '';
 
-const title = new Set()
+let title = []
 let titleTwo = []
 
 const fetchData = async (searchWord) => {
@@ -30,14 +30,29 @@ const getResults = async (searchWord) => {
   $ = await fetchData(searchWord)
 
 	siteTitle = `Job results for ${searchWord}`
+  let titleUnfiltered = []
 
   //get data from website Posao
-  $('.container a[href*="oglasi/"]').each((index, element) => {
-    let posao_job = $(element).text()
-    let posao_links = $(element).attr('href')
-    title.add({posao_job, posao_links})
+  $('.container a[href*="oglasi/"]').each(function () {
+    titleUnfiltered.push({
+      title: $(this).find('.title').text(),
+      location: $(this).find('.location').text(),
+      deadline: $(this).find('.deadline').text(),
+      company: $(this).find('.company').text(),
+      link: $(this).attr('href')
+    });
   })
   
+  //filter empty values from titleUnfiltered
+  title = titleUnfiltered.filter(function(o){
+    let values = Object.values(o)
+    let arr2 = ["", null]
+    if(arr2.some(function (val){ return values.indexOf(val) >=0}))
+      return false
+    else 
+      return true
+  })
+
   //get data from website MojPosao
 	$('.job .general-info').each(function () {
     titleTwo.push({
