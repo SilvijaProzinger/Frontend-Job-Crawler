@@ -51,16 +51,26 @@ ul {
 	margin: 30px;
 }
 
+.subTitle a:hover {
+	color: #ff7d45;
+}
+
 .posaoLogo, .mojPosaoLogo {
-	height: 70px;
+	height: 55px;
 	width: auto;
+	margin: 0 auto;
+	display: block;
+}
+
+.posaoText, .mojPosaoText {
+	text-align: center;
 }
 
 .websites {
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 	margin: auto;
-	width: 50%;
 	justify-content: center;
 }
 
@@ -68,7 +78,7 @@ ul {
 	padding: 20px;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    width: auto;
+    width: 350px;
     border-radius: 5px;
     margin: 20px;
 }
@@ -139,3 +149,5 @@ a {
     text-align: center;
     color: white;
 }
+
+

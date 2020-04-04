@@ -7,11 +7,16 @@ block content
    form(method='GET' action='/search')
     input#search(type='text', placeholder='Search for a job' name='keyword')
     button#searchButton Search
- h2.subTitle Get job results from:
+ h2.subTitle Get jobs from:
  div.websites
   div.website
    img.posaoLogo(src='https://www.oglasnik.hr//assets/img/posao.hr-logo.png' alt='Posao.hr logo')
-   h3.subTitle Posao.hr
+   h3.subTitle
+    a(href= 'https://www.posao.hr')= 'Posao.hr'
+    h4.posaoText Pronađi posao među 2397 objavljenih oglasa
   div.website
    img.mojPosaoLogo(src='https://www.moj-posao.net/data/content/visual/MP/MojPosao.jpg' alt='MojPosao.net logo')
-   h3.subTitle MojPosao.net
+   h3.subTitle
+    a(href= 'https://www.moj-posao.net')= 'MojPosao.net'
+    h4.mojPosaoText Posao i savjeti za razvoj karijere
+
