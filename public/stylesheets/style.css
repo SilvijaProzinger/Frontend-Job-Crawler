@@ -12,11 +12,24 @@ a {
 .headerContent {
 	text-align: center;
 	padding: 3%;
-	background-image: url('black-and-gray-photo-of-person-in-front-of-computer-monitor-140945.jpg');
+    max-width: 100%;
+    position: relative;
+    display: block;
+}
+
+.headerContent::after {
+	content: "";
+	background: url('black-and-gray-photo-of-person-in-front-of-computer-monitor-140945.jpg');
 	background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    max-width: 100%;
+	opacity: 0.7;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	position: absolute;
+	z-index: -1;  
 }
 
 #searchButton {
@@ -142,12 +155,22 @@ a {
 	position: absolute;
     bottom: 0;
     width: 100%;
-    background-image: url('black-and-gray-photo-of-person-in-front-of-computer-monitor-140945.jpg');
+    text-align: center;
+}
+
+.footer::after {
+	content: "";
+	background: url('black-and-gray-photo-of-person-in-front-of-computer-monitor-140945.jpg');
 	background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
-    text-align: center;
-    color: white;
+	opacity: 0.7;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	position: absolute;
+	z-index: -1;  
 }
 
 
